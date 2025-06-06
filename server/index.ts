@@ -64,5 +64,4 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-  dotenv.config();
-console.log("DATABASE_URL =", process.env.DATABASE_URL);
+
