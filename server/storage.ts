@@ -77,6 +77,9 @@ export class MemStorage implements IStorage {
 
     // Initialize with sample data
     this.initializeSampleData();
+    
+    // Add sample donations to showcase transparency
+    this.initializeSampleDonations();
   }
 
   private initializeSampleData() {
@@ -209,6 +212,57 @@ export class MemStorage implements IStorage {
       amount: "10000.00",
       category: "marketing",
       icon: "fas fa-chart-line",
+    });
+  }
+
+  private initializeSampleDonations() {
+    // Add sample donations to demonstrate transparency tracking
+    this.createDonation({
+      amount: "250.00",
+      donorEmail: "sarah.chen@example.com",
+      donorName: "Sarah Chen",
+      stripePaymentIntentId: "pi_sample_1",
+      status: "succeeded",
+    });
+
+    this.createDonation({
+      amount: "100.00",
+      donorEmail: "marcus.rodriguez@example.com",
+      donorName: "Marcus Rodriguez",
+      stripePaymentIntentId: "pi_sample_2",
+      status: "succeeded",
+    });
+
+    this.createDonation({
+      amount: "500.00",
+      donorEmail: "priya.patel@example.com",
+      donorName: "Dr. Priya Patel",
+      stripePaymentIntentId: "pi_sample_3",
+      status: "succeeded",
+    });
+
+    this.createDonation({
+      amount: "75.00",
+      donorEmail: "james.thompson@example.com",
+      donorName: "James Thompson",
+      stripePaymentIntentId: "pi_sample_4",
+      status: "succeeded",
+    });
+
+    this.createDonation({
+      amount: "300.00",
+      donorEmail: "lisa.wang@example.com",
+      donorName: "Lisa Wang",
+      stripePaymentIntentId: "pi_sample_5",
+      status: "succeeded",
+    });
+
+    this.createDonation({
+      amount: "150.00",
+      donorEmail: "robert.kim@example.com",
+      donorName: "Robert Kim",
+      stripePaymentIntentId: "pi_sample_6",
+      status: "succeeded",
     });
   }
 
