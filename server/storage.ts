@@ -217,6 +217,7 @@ export class MemStorage implements IStorage {
     const donation: Donation = {
       ...insertDonation,
       id,
+      status: insertDonation.status || "pending",
       createdAt: new Date(),
     };
     this.donations.set(id, donation);
@@ -248,6 +249,7 @@ export class MemStorage implements IStorage {
     const contact: Contact = {
       ...insertContact,
       id,
+      organization: insertContact.organization || null,
       createdAt: new Date(),
     };
     this.contacts.set(id, contact);
@@ -267,6 +269,11 @@ export class MemStorage implements IStorage {
     const project: Project = {
       ...insertProject,
       id,
+      stars: insertProject.stars || 0,
+      commits: insertProject.commits || 0,
+      contributors: insertProject.contributors || 0,
+      openIssues: insertProject.openIssues || 0,
+      isActive: insertProject.isActive !== undefined ? insertProject.isActive : true,
       createdAt: new Date(),
     };
     this.projects.set(id, project);
@@ -282,6 +289,9 @@ export class MemStorage implements IStorage {
     const testimonial: Testimonial = {
       ...insertTestimonial,
       id,
+      rating: insertTestimonial.rating || 5,
+      isActive: insertTestimonial.isActive !== undefined ? insertTestimonial.isActive : true,
+      avatarUrl: insertTestimonial.avatarUrl || null,
       createdAt: new Date(),
     };
     this.testimonials.set(id, testimonial);

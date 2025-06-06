@@ -17,7 +17,7 @@ export default function Navbar() {
 
   const navItems = [
     { label: "Mission", id: "mission" },
-    { label: "Impact", id: "transparency" },
+    { label: "Impact", id: "impact" },
     { label: "Projects", id: "projects" },
     { label: "Transparency", id: "transparency" },
     { label: "Stories", id: "testimonials" },
