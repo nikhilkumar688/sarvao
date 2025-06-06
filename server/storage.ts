@@ -15,6 +15,8 @@ import {
   type Expense,
   type InsertExpense
 } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   // Donations
@@ -45,6 +47,107 @@ export interface IStorage {
     totalAllocated: number;
     availableBalance: number;
   }>;
+}
+
+export class DatabaseStorage implements IStorage {
+  async createDonation(insertDonation: InsertDonation): Promise<Donation> {
+    const [donation] = await db
+      .insert(donations)
+      .values(insertDonation)
+      .returning();
+    return donation;
+  }
+
+  async getDonations(): Promise<Donation[]> {
+    return await db.select().from(donations);
+  }
+
+  async getDonationByPaymentIntent(paymentIntentId: string): Promise<Donation | undefined> {
+    const [donation] = await db
+      .select()
+      .from(donations)
+      .where(eq(donations.stripePaymentIntentId, paymentIntentId));
+    return donation || undefined;
+  }
+
+  async updateDonationStatus(id: number, status: string): Promise<Donation> {
+    const [donation] = await db
+      .update(donations)
+      .set({ status })
+      .where(eq(donations.id, id))
+      .returning();
+    return donation;
+  }
+
+  async createContact(insertContact: InsertContact): Promise<Contact> {
+    const [contact] = await db
+      .insert(contacts)
+      .values(insertContact)
+      .returning();
+    return contact;
+  }
+
+  async getContacts(): Promise<Contact[]> {
+    return await db.select().from(contacts);
+  }
+
+  async getProjects(): Promise<Project[]> {
+    return await db.select().from(projects).where(eq(projects.isActive, true));
+  }
+
+  async createProject(insertProject: InsertProject): Promise<Project> {
+    const [project] = await db
+      .insert(projects)
+      .values(insertProject)
+      .returning();
+    return project;
+  }
+
+  async getTestimonials(): Promise<Testimonial[]> {
+    return await db.select().from(testimonials).where(eq(testimonials.isActive, true));
+  }
+
+  async createTestimonial(insertTestimonial: InsertTestimonial): Promise<Testimonial> {
+    const [testimonial] = await db
+      .insert(testimonials)
+      .values(insertTestimonial)
+      .returning();
+    return testimonial;
+  }
+
+  async getExpenses(): Promise<Expense[]> {
+    return await db.select().from(expenses);
+  }
+
+  async createExpense(insertExpense: InsertExpense): Promise<Expense> {
+    const [expense] = await db
+      .insert(expenses)
+      .values(insertExpense)
+      .returning();
+    return expense;
+  }
+
+  async getFinancialSummary(): Promise<{
+    totalRaised: number;
+    totalAllocated: number;
+    availableBalance: number;
+  }> {
+    const donationData = await this.getDonations();
+    const expenseData = await this.getExpenses();
+    
+    const totalRaised = donationData
+      .filter(d => d.status === "succeeded")
+      .reduce((sum, d) => sum + parseFloat(d.amount), 0);
+    
+    const totalAllocated = expenseData
+      .reduce((sum, e) => sum + parseFloat(e.amount), 0);
+    
+    return {
+      totalRaised,
+      totalAllocated,
+      availableBalance: totalRaised - totalAllocated,
+    };
+  }
 }
 
 export class MemStorage implements IStorage {
@@ -390,4 +493,4 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
