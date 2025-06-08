@@ -55,7 +55,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-yellow-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Get Involved</h2>
@@ -65,7 +65,7 @@ export default function Contact() {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <Card className="bg-muted/50">
+          <Card className="bg-gray-100">
             <CardHeader>
               <CardTitle className="text-2xl">Send us a Message</CardTitle>
             </CardHeader>
@@ -147,7 +147,7 @@ export default function Contact() {
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="w-full btn-primary"
+                  className="w-full bg-indigo-600 btn-primary"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
@@ -156,7 +156,7 @@ export default function Contact() {
           </Card>
           
           <div className="space-y-8">
-            <Card className="bg-secondary/10">
+            <Card className="bg-gray-100">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Join Our Initiative</h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
@@ -182,7 +182,7 @@ export default function Contact() {
                   </div>
                 </div>
                 
-                <Button className="w-full btn-secondary">
+                <Button className="w-full bg-indigo-800 btn-secondary">
                   Join Initiative
                 </Button>
               </CardContent>
@@ -190,16 +190,16 @@ export default function Contact() {
             
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">Other Ways to Connect</CardTitle>
+                <CardTitle className="text-xl ">Other Ways to Connect</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 ">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <div className="font-medium text-gray-900">Email</div>
-                    <div className="text-gray-600">hello@sarvao.org</div>
+                    <div className="text-gray-600">sarvao@proton.org</div>
                   </div>
                 </div>
                 
@@ -218,8 +218,20 @@ export default function Contact() {
                     <MessageCircle className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <div className="font-medium text-gray-900">Community Discord</div>
-                    <div className="text-gray-600">discord.gg/sarvao</div>
+                    
+                    <div>
+  <div className="font-medium text-gray-900">
+    <a 
+      href="https://discord.com/invite/RTPBGG9m" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-blue-600 hover:underline"
+    >
+      Community Discord
+    </a>
+  </div>
+  <div className="text-gray-600">Join our community on Discord!</div>
+</div>
                   </div>
                 </div>
               </CardContent>

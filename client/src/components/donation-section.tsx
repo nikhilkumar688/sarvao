@@ -9,12 +9,12 @@ export default function DonationSection() {
   const [customAmount, setCustomAmount] = useState("");
 
   const donationAmounts = [
-    { category: "Development", amounts: [25, 50, 100], icon: Code, color: "from-primary to-blue-700", textColor: "text-primary" },
-    { category: "Community", amounts: [75, 150, 300], icon: Users, color: "from-secondary to-green-700", textColor: "text-secondary" },
+    { category: "Development", amounts: [25, 50, 100], icon: Code, color: "from-blue-500 to-indigo-800", textColor: "text-primary" },
+    { category: "Community", amounts: [75, 150, 300], icon: Users, color: "from-indigo-500 to-indigo-800", textColor: "text-secondary" },
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-yellow-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Support Transparent Impact</h2>
@@ -55,10 +55,10 @@ export default function DonationSection() {
             );
           })}
           
-          <Card className="border-2 border-gray-200 shadow-lg">
+          <Card className="border-2 border-gray-200 bg-gray-100 shadow-lg">
             <CardContent className="p-8">
               <div className="text-center space-y-6">
-                <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                <div className="w-20 h-20 bg-yellow-200 rounded-full flex items-center justify-center mx-auto">
                   <Heart className="w-8 h-8 text-accent" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Custom Amount</h3>
@@ -86,24 +86,24 @@ export default function DonationSection() {
           </Card>
         </div>
         
-        <Card className="mt-16 bg-muted/50">
+        <Card className="mt-16 bg-gray-100">
           <CardContent className="p-8">
             <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Your Impact in Numbers</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">125K</div>
+                <div className="text-3xl font-bold text-primary">10k+</div>
                 <div className="text-gray-600">Lines of Code</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-secondary">89</div>
+                <div className="text-3xl font-bold text-secondary">4+</div>
                 <div className="text-gray-600">Developers Supported</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent">23</div>
+                <div className="text-3xl font-bold text-accent">1+</div>
                 <div className="text-gray-600">Communities Served</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">47</div>
+                <div className="text-3xl font-bold text-gray-900">1+</div>
                 <div className="text-gray-600">Projects Completed</div>
               </div>
             </div>

@@ -11,7 +11,7 @@ export default function Mission() {
   };
 
   return (
-    <section id="mission" className="py-20 bg-muted/50">
+    <section id="mission" className="py-20 bg-yellow-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Mission</h2>
@@ -21,19 +21,19 @@ export default function Mission() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <Card className="hover:shadow-xl transition-shadow duration-300">
+          <Card className="hover:shadow-xl transition-shadow bg-gray-100 duration-300">
             <CardContent className="p-8">
               <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                 <Code className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Open Source First</h3>
+              <h3 className="text-2xl font-bold  text-gray-900 mb-4">Open Source First</h3>
               <p className="text-gray-600 leading-relaxed">
                 Every solution we build is open source, ensuring transparency, community collaboration, and long-term sustainability.
               </p>
             </CardContent>
           </Card>
           
-          <Card className="hover:shadow-xl transition-shadow duration-300">
+          <Card className="hover:shadow-xl transition-shadow bg-gray-100 duration-300">
             <CardContent className="p-8">
               <div className="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
                 <TrendingUp className="w-8 h-8 text-secondary" />
@@ -45,7 +45,7 @@ export default function Mission() {
             </CardContent>
           </Card>
           
-          <Card className="hover:shadow-xl transition-shadow duration-300">
+          <Card className="hover:shadow-xl transition-shadow bg-gray-100 duration-300">
             <CardContent className="p-8">
               <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
                 <Users className="w-8 h-8 text-accent" />
@@ -58,7 +58,7 @@ export default function Mission() {
           </Card>
         </div>
         
-        <Card className="shadow-lg">
+        <Card className="shadow-lg bg-yellow-100">
           <CardContent className="p-8 lg:p-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
@@ -86,9 +86,9 @@ export default function Mission() {
               </div>
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                  alt="Community volunteers collaborating on projects" 
-                  className="rounded-xl shadow-lg w-full h-auto" 
+                  src="https://media.licdn.com/dms/image/v2/D4E22AQFQBXlSNOkA4Q/feedshare-shrink_2048_1536/B4EZdDqIr1HcAs-/0/1749186809154?e=1752105600&v=beta&t=w2cX5be-o6Kf_HiR-gO2tz5VnEvcUWeASkvH_jeTSPU" 
+                  alt="our logo" 
+                  className="rounded-full shadow-lg w-auto h-auto object-cover" 
                 />
               </div>
             </div>

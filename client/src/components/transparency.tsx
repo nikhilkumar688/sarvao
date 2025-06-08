@@ -52,7 +52,7 @@ export default function Transparency() {
   const totalAllocated = financialSummary?.totalAllocated || 0;
 
   return (
-    <section id="transparency" className="py-20 bg-muted/50">
+    <section id="transparency" className="py-20 bg-yellow-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Financial Transparency</h2>
@@ -62,29 +62,29 @@ export default function Transparency() {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          <Card className="shadow-lg">
+          <Card className="shadow-lg bg-gray-100">
             <CardContent className="p-8">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-gray-900">Total Raised</h3>
                 <DollarSign className="w-6 h-6 text-secondary" />
               </div>
               <div className="text-4xl font-bold text-gray-900 mb-2">
-                ${financialSummary ? financialSummary.totalRaised.toLocaleString() : "0"}
+               ₹{financialSummary ? financialSummary.totalRaised.toLocaleString() : "0"}
               </div>
               <div className="text-sm text-gray-600">
-                <span className="text-secondary">↗ 23%</span> from last month
+                <span className="text-secondary">↗ 1%</span> from last month
               </div>
             </CardContent>
           </Card>
           
-          <Card className="shadow-lg">
+          <Card className="shadow-lg bg-gray-100">
             <CardContent className="p-8">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-gray-900">Funds Allocated</h3>
                 <TrendingUp className="w-6 h-6 text-primary" />
               </div>
               <div className="text-4xl font-bold text-gray-900 mb-2">
-                ${financialSummary ? financialSummary.totalAllocated.toLocaleString() : "0"}
+                ₹{financialSummary ? financialSummary.totalAllocated.toLocaleString() : "0"}
               </div>
               <div className="text-sm text-gray-600">
                 {financialSummary && financialSummary.totalRaised > 0 
@@ -95,14 +95,14 @@ export default function Transparency() {
             </CardContent>
           </Card>
           
-          <Card className="shadow-lg">
+          <Card className="shadow-lg bg-gray-100">
             <CardContent className="p-8">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-gray-900">Available Balance</h3>
                 <PiggyBank className="w-6 h-6 text-accent" />
               </div>
               <div className="text-4xl font-bold text-gray-900 mb-2">
-                ${financialSummary ? financialSummary.availableBalance.toLocaleString() : "0"}
+                ₹{financialSummary ? financialSummary.availableBalance.toLocaleString() : "0"}
               </div>
               <div className="text-sm text-gray-600">
                 Ready for deployment
@@ -111,7 +111,7 @@ export default function Transparency() {
           </Card>
         </div>
         
-        <Card className="shadow-lg">
+        <Card className="shadow-lg bg-gray-200">
           <CardContent className="p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Expense Breakdown</h3>
             <div className="space-y-6">
@@ -139,7 +139,7 @@ export default function Transparency() {
               })}
             </div>
             
-            <div className="mt-8 p-6 bg-blue-50 rounded-lg">
+            <div className="mt-8 p-6 bg-yellow-50 rounded-lg">
               <div className="flex items-center space-x-3 mb-3">
                 <Info className="w-5 h-5 text-primary" />
                 <h4 className="font-semibold text-gray-900">Transparency Commitment</h4>
